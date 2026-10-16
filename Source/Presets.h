@@ -1,0 +1,27 @@
+// Mz303 - Copyright (C) 2026 Simon Moscrop
+// Free software under the GNU AGPL v3; see LICENSE.
+
+#pragma once
+
+#include <juce_audio_processors/juce_audio_processors.h>
+
+#include <utility>
+#include <vector>
+
+namespace presets
+{
+
+// A factory patch: only the controls that differ from the panel's defaults. Choices are the
+// switch position as an index.
+struct Preset
+{
+    const char* name;
+    std::vector<std::pair<const char*, double>> values;
+};
+
+const std::vector<Preset>& all();
+
+// Every parameter to its default, then the preset's own values on top.
+void apply(const Preset& p, juce::AudioProcessorValueTreeState& state);
+
+} // namespace presets
