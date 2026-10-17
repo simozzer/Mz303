@@ -94,7 +94,7 @@ GitHub builds the downloads for every release and attaches them, so each one has
 installer:
 
 1. Bump the version in `CMakeLists.txt`.
-2. Write the notes in `docs/releases/v<version>.md`, ending with the copyright line
+2. Write the notes in `docs/releases/v<version>.md`, ending with the credit line
    (copy it from the last release's notes), then commit both.
 3. Tag and push: `git tag -a v0.2.0 -m "Mz303 0.2.0"`, then `git push origin main v0.2.0`.
 4. The *release* workflow builds and checks the plugin, then makes a **draft** release with
@@ -209,7 +209,7 @@ and fit them.
 
 ## Licence
 
-Copyright (C) 2026 Simon Moscrop.
+Created by Simon Moscrop.
 
 Mz303 is free software under the GNU Affero General Public License v3; see
 [LICENSE](LICENSE). It is built with [JUCE](https://juce.com), used under the same licence.

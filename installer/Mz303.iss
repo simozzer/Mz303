@@ -28,7 +28,7 @@ AppPublisher=simozzer
 AppPublisherURL=https://github.com/simozzer/Mz303
 AppSupportURL=https://github.com/simozzer/Mz303/issues
 AppUpdatesURL=https://github.com/simozzer/Mz303/releases
-AppCopyright=Copyright (C) 2026 Simon Moscrop
+AppCopyright=Created by Simon Moscrop
 VersionInfoVersion={#AppVersion}
 
 DefaultDirName={autopf}\Mz303
