@@ -333,8 +333,9 @@ Panel::Panel(Mz303Processor& p)
     //
     projectLink.setButtonText("Mz303 " JucePlugin_VersionString "  -  github.com/simozzer/Mz303");
     projectLink.setURL(juce::URL("https://github.com/simozzer/Mz303"));
-    projectLink.setFont(juce::FontOptions(12.0f), false, juce::Justification::centredRight);
-    projectLink.setColour(juce::HyperlinkButton::textColourId, colours::dim);
+    projectLink.setFont(juce::Font(juce::FontOptions(13.0f)).withStyle(juce::Font::bold | juce::Font::underlined),
+                        false, juce::Justification::centredRight);
+    projectLink.setColour(juce::HyperlinkButton::textColourId, juce::Colour(0xff0b4fa8));   // a link's blue, and underlined
     projectLink.setTooltip("The project's page: the latest version and what's new in it, the source, "
                            "and where to report a problem. Opens in your browser.");
     projectLink.setWantsKeyboardFocus(false);
