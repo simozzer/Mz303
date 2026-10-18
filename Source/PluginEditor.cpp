@@ -326,6 +326,20 @@ Panel::Panel(Mz303Processor& p)
     };
     addAndMakeVisible(presetBox);
 
+    //
+    // Where to come back to: the version this is, and the page the next one will be on.
+    // Nothing here checks for updates by itself - the plugin never goes online unasked.
+    // It takes no keyboard focus, or a host's space bar could open it rather than play.
+    //
+    projectLink.setButtonText("Mz303 " JucePlugin_VersionString "  -  github.com/simozzer/Mz303");
+    projectLink.setURL(juce::URL("https://github.com/simozzer/Mz303"));
+    projectLink.setFont(juce::FontOptions(12.0f), false, juce::Justification::centredRight);
+    projectLink.setColour(juce::HyperlinkButton::textColourId, colours::dim);
+    projectLink.setTooltip("The project's page: the latest version and what's new in it, the source, "
+                           "and where to report a problem. Opens in your browser.");
+    projectLink.setWantsKeyboardFocus(false);
+    addAndMakeVisible(projectLink);
+
     // The on-screen keys play at a plain velocity, or with ACCENT latched, an accented one.
     accentKeys.setClickingTogglesState(true);
     accentKeys.setTooltip("Latch to play the on-screen keys accented. From MIDI, velocity 100 or more is an accent, "
@@ -369,6 +383,7 @@ void Panel::resized()
     constexpr int margin = 14, pad = 12;
 
     presetBox.setBounds(designWidth - margin - 220, 14, 220, 26);
+    projectLink.setBounds(presetBox.getX() - 16 - 420, presetBox.getY(), 420, presetBox.getHeight());
 
     knobSection = { margin, 56, designWidth - 2 * margin, 150 };
     keyboardSection = { margin, 218, designWidth - 2 * margin, designHeight - 218 - margin };

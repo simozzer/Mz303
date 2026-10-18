@@ -146,6 +146,9 @@ private:
     Lights lights;
 
     juce::ComboBox presetBox;
+
+    // This version, and where to find the next: the project's page, beside the presets.
+    juce::HyperlinkButton projectLink;
     juce::TextButton accentKeys { "ACCENT" };
     juce::MidiKeyboardComponent keyboard;
 
